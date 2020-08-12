@@ -15,8 +15,9 @@ var enemyAttack = 12;
 // You cna also log mulitple values at once like this
 
 var fight = function(enemyName) {
-    // Alert users that they are starting the round
-  window.alert("Welcome to Robot Gladiators!");
+    //repeat and execute as long as the enemy robot is alive
+    while(enemyHealth > 0) {
+            // Alert users that they are starting the round
 
   var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
 
@@ -79,7 +80,10 @@ var fight = function(enemyName) {
 
 }
 }
+    }
 
 for(var i = 0; i < enemyNames.length; i++) {
-    fight(enemyNames[i]);
+    var pickedEnemyName = enemyNames[i];
+    enemyHealth = 50;
+    fight(pickedEnemyName);
 }
